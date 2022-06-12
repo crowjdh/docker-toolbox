@@ -1,0 +1,7 @@
+alias busybox='docker-toolbox busybox named $@'
+alias wget='docker-toolbox dt-wget named $@'
+alias nc='docker-toolbox dt-nc named $@'
+alias nmap='docker-toolbox dt-nmap named $@'
+alias lftp='docker-toolbox dt-lftp named $@'
+
+alias lftp_tmp='docker-toolbox dt-lftp unnamed $@'
