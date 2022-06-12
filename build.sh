@@ -8,7 +8,6 @@ if [[ $# -lt 1 ]]; then
 fi
 
 TOOL_NAME=$1
-# BASE_IMAGE=$2
 
 ARCH=$(uname -m)
 if [[ $ARCH = "x86_64" ]]; then
@@ -23,12 +22,6 @@ else
 fi
 
 BASE_IMAGE_ARG="--build-arg BASE_IMAGE=$BASE_IMAGE"
-
-# if [[ -z "${BASE_IMAGE}" ]]; then
-#   BASE_IMAGE_ARG=""
-# else
-#   BASE_IMAGE_ARG="--build-arg BASE_IMAGE=$BASE_IMAGE"
-# fi
 
 docker build \
   -f $TOOL_NAME.Dockerfile \
