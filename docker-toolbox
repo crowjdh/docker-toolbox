@@ -14,7 +14,7 @@ fi
 
 docker run -ti --rm \
   --net host \
-  -v $(PWD):$WORK_DIR \
+  -v $(pwd):$WORK_DIR \
   -w $WORK_DIR \
   $(echo $NAME_ARG) \
   $TOOL $CMD
