@@ -1,0 +1,20 @@
+#!/bin/bash
+
+TOOL=$1
+NAMED=$2
+CMD=${@:3}
+
+WORK_DIR=/workspace
+
+if [[ $NAMED = "named" ]]; then
+  NAME_ARG="--name $TOOL"
+else
+  NAME_ARG=" "
+fi
+
+docker run -ti --rm \
+  --net host \
+  -v $(PWD):$WORK_DIR \
+  -w $WORK_DIR \
+  $(echo $NAME_ARG) \
+  $TOOL $CMD
